@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script defer src="script.js"></script>
+        <title>Document</title>
+    </head>
+
+    <!-- Book Template -->
+    <div id="book-template" class="book card hidden">
+        <div id="book-title"></div>
+        <div><span>written by </span><span id="book-author"></span></div>
+        <div id="book-pages"></div>
+        <div id="book-read"></div>
+        <div id="book-buttons">
+            <input type="button" value="Delete Book" />
+            <input type="button" value="Toggle Read" />
+        </div>
+    </div>
+
+    <body>
+        <div id="library-app">
+            <div id="header">
+                <h1>Library App</h1>
+            </div>
+            <div id="books">
+                <div id="add-book" class="card">
+                    <input type="button" value="Add Book" />
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

@@ -1,0 +1,28 @@
+
+
+
+.card {
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+#books {
+    display: flex;
+    gap: 10px;
+    background-color: aqua;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
