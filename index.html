@@ -17,18 +17,38 @@
         <div class="book-read"></div>
         <div class="book-buttons">
             <input class="delete" type="button" value="Delete Book" />
-            <input data-read="false" class="toggle" type="button" value="Toggle Read" />
+            <input
+                data-read="false"
+                class="toggle"
+                type="button"
+                value="Toggle Read"
+            />
         </div>
     </div>
 
     <body>
+        <div id="form-wrapper" class="hidden">
+            <form id="book-form" action="" title="Add a new book to the library:">
+                <label for="input-title">Title:</label>
+                <input type="text" name="Title" id="input-title" />
+                <label for="input-author">Author:</label>
+                <input type="text" name="Author" id="input-author" />
+                <label for="input-pages">Number of pages:</label>
+                <input type="text" name="Pages" id="input-pages" />
+                <input type="button" value="Ok" id="form-submit">
+            </form>
+        </div>
+            
+        </div>
         <div id="library-app">
             <div id="header">
                 <h1>Library App</h1>
             </div>
-            <div id="books">
-                <div id="add-book" class="card">
-                    <input type="button" value="Add New Book" />
+            <div id="books-wrapper">    
+                <div id="books">
+                    <div id="add-book" class="card">
+                        <input id="new-book-button" type="button" value="Add New Book" />
+                    </div>
                 </div>
             </div>
         </div>

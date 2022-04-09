@@ -1,8 +1,6 @@
 
-
-
 .card {
-    width: 200px;
+    min-width: 200px;
     height: 200px;
     background-color: aquamarine;
     display: flex;
@@ -11,11 +9,34 @@
 }
 
 
+#form-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#book-form {
+    display: flex;
+    flex-direction: column;
+    background-color: blueviolet;
+    padding: 10px;
+}
+
+#books-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    background-color: rgb(104, 29, 29);
+}
 
 #books {
+    background-color: rgb(58, 18, 150);
     display: flex;
+    flex-wrap: wrap;
+    flex: fit-content;
     gap: 10px;
-    /* background-color: aqua; */
 }
 
 .book {
