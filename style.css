@@ -15,12 +15,17 @@
 #books {
     display: flex;
     gap: 10px;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .book {
     display: flex;
     flex-direction: column;
+}
+
+.read {
+    color: rgba(128, 128, 128, 0.856);
+    background-color: rgba(69, 141, 117, 0.562);
 }
 
 .hidden {

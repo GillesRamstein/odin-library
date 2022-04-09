@@ -11,13 +11,13 @@
 
     <!-- Book Template -->
     <div id="book-template" class="book card hidden">
-        <div id="book-title"></div>
-        <div><span>written by </span><span id="book-author"></span></div>
-        <div id="book-pages"></div>
-        <div id="book-read"></div>
-        <div id="book-buttons">
-            <input type="button" value="Delete Book" />
-            <input type="button" value="Toggle Read" />
+        <div class="book-title"></div>
+        <div><span>written by </span><span class="book-author"></span></div>
+        <div class="book-pages"></div>
+        <div class="book-read"></div>
+        <div class="book-buttons">
+            <input class="delete" type="button" value="Delete Book" />
+            <input data-read="false" class="toggle" type="button" value="Toggle Read" />
         </div>
     </div>
 
@@ -28,7 +28,7 @@
             </div>
             <div id="books">
                 <div id="add-book" class="card">
-                    <input type="button" value="Add Book" />
+                    <input type="button" value="Add New Book" />
                 </div>
             </div>
         </div>
