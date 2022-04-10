@@ -11,26 +11,35 @@ function Book(title, author, pages, read) {
     this.id = [title, author, pages].join("-").replaceAll(" ", "-");
 }
 
-document
-    .getElementById("new-book-button")
-    .addEventListener("click", showNewBookInput);
+function centerBooks() {
+    const margins = 2 * 8;
+    let bookWidth = document.getElementById("add-book").offsetWidth + margins;
+    let books = document.getElementById("books");
+    let maxWidth = books.parentNode.offsetWidth;
+    let maxBooks = Math.floor(maxWidth / bookWidth);
+    booksWidth = maxBooks * bookWidth;
+    books.style.width = booksWidth + "px";
+}
+window.onresize = centerBooks;
+centerBooks();
 
 function showNewBookInput(e) {
     let form = document.getElementById("form-wrapper");
     form.classList.toggle("hidden");
 }
-
-document.getElementById("form-cancel").addEventListener("click", cancelAddBookForm);
+document
+    .getElementById("new-book-button")
+    .addEventListener("click", showNewBookInput);
 
 function cancelAddBookForm(e) {
     let form = this.parentNode.parentNode;
-    form.reset()
-    let formWrapper = form.parentNode
-    formWrapper.classList.toggle("hidden")
-
+    form.reset();
+    let formWrapper = form.parentNode;
+    formWrapper.classList.toggle("hidden");
 }
-
-document.getElementById("form-submit").addEventListener("click", submitNewBookForm);
+document
+    .getElementById("form-cancel")
+    .addEventListener("click", cancelAddBookForm);
 
 function submitNewBookForm(e) {
     let form = this.parentNode.parentNode;
@@ -45,9 +54,12 @@ function submitNewBookForm(e) {
             1
         )
     );
-    let formWrapper = form.parentNode
-    formWrapper.classList.toggle("hidden")
+    let formWrapper = form.parentNode;
+    formWrapper.classList.toggle("hidden");
 }
+document
+    .getElementById("form-submit")
+    .addEventListener("click", submitNewBookForm);
 
 function addNewBookToDOM(book) {
     let newBook = document.getElementById("book-template").cloneNode(true);
@@ -107,10 +119,10 @@ function toggleReadBookStatus(e) {
     let isReadIcon = this.querySelector(".book-read-icon");
     if (isReadIcon.src.includes("not-read.svg")) {
         isReadIcon.src = isReadIcon.src.replace("not-read.svg", "is-read.svg");
-        isReadIcon.title = "Mark book as not read yet"
+        isReadIcon.title = "Mark book as not read yet";
     } else if (isReadIcon.src.includes("is-read.svg")) {
         isReadIcon.src = isReadIcon.src.replace("is-read.svg", "not-read.svg");
-        isReadIcon.title = "Mark book as read"
+        isReadIcon.title = "Mark book as read";
     }
 }
 

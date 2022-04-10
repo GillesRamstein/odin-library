@@ -38,13 +38,12 @@ img:hover {
     align-items: center;
     justify-content: center;
     padding: 10px;
-    margin: 4px;
+    margin: 8px;
 }
 
 .card:hover {
-    width: 204px;
-    height: 204px;
-    margin: 2px;
+    padding: 14px;
+    margin: 4px;
 }
 
 /* Add New Book Form */
@@ -102,6 +101,14 @@ img:hover {
     justify-content: center;
 }
 
+
+/* Header */
+#header h1 {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
 /* Books Container */
 
 #books-wrapper {
@@ -114,8 +121,6 @@ img:hover {
 #books {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
 }
 
 /* Book Cards */
