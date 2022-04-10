@@ -1,3 +1,5 @@
+console.log("Start");
+
 let myLibrary = [];
 let books = document.getElementById("books");
 
@@ -18,18 +20,33 @@ function showNewBookInput(e) {
     form.classList.toggle("hidden");
 }
 
-document.getElementById("form-submit").addEventListener("click", addNewBook);
+document.getElementById("form-cancel").addEventListener("click", cancelAddBookForm);
 
-function addNewBook(e) {
+function cancelAddBookForm(e) {
+    let form = this.parentNode.parentNode;
+    form.reset()
+    let formWrapper = form.parentNode
+    formWrapper.classList.toggle("hidden")
+
+}
+
+document.getElementById("form-submit").addEventListener("click", submitNewBookForm);
+
+function submitNewBookForm(e) {
+    let form = this.parentNode.parentNode;
+    if (!form.reportValidity()) {
+        return;
+    }
     addNewBookToDOM(
         new Book(
-            this.parentNode.querySelector("#input-title").value,
-            this.parentNode.querySelector("#input-author").value,
-            this.parentNode.querySelector("#input-pages").value,
+            form.querySelector("#input-title").value,
+            form.querySelector("#input-author").value,
+            form.querySelector("#input-pages").value,
             1
         )
     );
-    hideNewBookInput(e);
+    let formWrapper = form.parentNode
+    formWrapper.classList.toggle("hidden")
 }
 
 function addNewBookToDOM(book) {
@@ -77,20 +94,24 @@ function removeBookFromDOM(book) {
 }
 
 function toggleReadBookStatus(e) {
-    console.log("TOGGLE READ");
     if (this.dataset.read === "false") {
         this.dataset.read = "true";
     } else {
         this.dataset.read = "false";
     }
+
     let book = this.parentNode.parentNode;
     book.querySelector(".book-read").innerText = formatRead(this.dataset.read);
     book.classList.toggle("read");
-}
 
-function hideNewBookInput(e) {
-    let form = document.getElementById("form-wrapper");
-    form.classList.toggle("hidden");
+    let isReadIcon = this.querySelector(".book-read-icon");
+    if (isReadIcon.src.includes("not-read.svg")) {
+        isReadIcon.src = isReadIcon.src.replace("not-read.svg", "is-read.svg");
+        isReadIcon.title = "Mark book as not read yet"
+    } else if (isReadIcon.src.includes("is-read.svg")) {
+        isReadIcon.src = isReadIcon.src.replace("is-read.svg", "not-read.svg");
+        isReadIcon.title = "Mark book as read"
+    }
 }
 
 // Populate library with dummy books

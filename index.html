@@ -12,42 +12,103 @@
     <!-- Book Template -->
     <div id="book-template" class="book card hidden">
         <div class="book-title"></div>
-        <div><span>written by </span><span class="book-author"></span></div>
+        <div class="small-text">written by</div>
+        <div class="book-author"></div>
         <div class="book-pages"></div>
         <div class="book-read"></div>
         <div class="book-buttons">
-            <input class="delete" type="button" value="Delete Book" />
-            <input
+            <button
                 data-read="false"
                 class="toggle"
                 type="button"
                 value="Toggle Read"
-            />
+                title="Mark book as read"
+            >
+                <img
+                    class="book-read-icon"
+                    src="images/not-read.svg"
+                    alt="toggle book read status"
+                />
+            </button>
+            <button class="delete" type="button" value="Delete Book" title="Remove book from library">
+                <img src="images/delete.svg" alt="delete book from library" />
+            </button>
         </div>
     </div>
 
-    <body>
-        <div id="form-wrapper" class="hidden">
-            <form id="book-form" action="" title="Add a new book to the library:">
+    <!-- New Book Form -->
+    <div id="form-wrapper" class="hidden">
+        <form id="book-form" title="Add a new book to the library:">
+            <div class="form-title">Add a new book</div>
+            <div class="input">
                 <label for="input-title">Title:</label>
-                <input type="text" name="Title" id="input-title" />
+                <input
+                    type="text"
+                    id="input-title"
+                    name="Title"
+                    placeholder="Parry Hotter"
+                    required
+                    minlength="1"
+                    default=""
+                />
+            </div>
+            <div class="input">
                 <label for="input-author">Author:</label>
-                <input type="text" name="Author" id="input-author" />
+                <input
+                    type="text"
+                    id="input-author"
+                    name="Author"
+                    placeholder="J.-K. Bowling"
+                    required
+                    minlength="1"
+                    default=""
+                />
+            </div>
+            <div class="input">
                 <label for="input-pages">Number of pages:</label>
-                <input type="text" name="Pages" id="input-pages" />
-                <input type="button" value="Ok" id="form-submit">
-            </form>
-        </div>
-            
-        </div>
+                <input
+                    type="number"
+                    id="input-pages"
+                    name="Pages"
+                    placeholder="666"
+                    required
+                    min="1"
+                    max="99999"
+                    default=""
+                />
+            </div>
+            <div class="form-buttons">
+                <button type="button" value="Ok" id="form-submit">
+                    <img src="images/ok.svg" alt="confirm adding new book" />
+                </button>
+                <button type="button" value="Ok" id="form-cancel">
+                    <img src="images/cancel.svg" alt="cancel adding new book" />
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Actual Page -->
+    <body>
         <div id="library-app">
             <div id="header">
                 <h1>Library App</h1>
             </div>
-            <div id="books-wrapper">    
+            <div id="books-wrapper">
                 <div id="books">
                     <div id="add-book" class="card">
-                        <input id="new-book-button" type="button" value="Add New Book" />
+                        <label for="new-book-button" id="new-book-button-label">
+                            <button
+                                id="new-book-button"
+                                type="button"
+                                value="Add New Book"
+                                class="hidden"
+                            ></button>
+                            <img
+                                src="images/add-book.svg"
+                                alt="add book icon"
+                            />
+                        </label>
                     </div>
                 </div>
             </div>
