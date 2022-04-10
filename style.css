@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Open-Sans";
+    src: url("fonts/OpenSans-VariableFont_wdth\,wght.ttf");
+}
+
 :root {
     /* colors */
     --card-width: max(250px, 20vw);
@@ -6,11 +11,23 @@
     --medium-color: rgb(150, 202, 185);
 
     /* svg img color change: https://codepen.io/sosuke/pen/Pjoqqp */
-    --svg-color-filter-bright: invert(31%) sepia(53%) saturate(390%) hue-rotate(109deg) brightness(95%) contrast(88%);
+    --svg-color-filter-bright: invert(31%) sepia(53%) saturate(390%)
+        hue-rotate(109deg) brightness(95%) contrast(88%);
     --svg-color-filter-black: brightness(0) saturate(100%);
 
-    /* page background color */
     background-color: var(--dark-color);
+    font-family: "Open-Sans", monospace;
+    color: var(--dark-color);
+}
+
+html, body {
+    height: 100vh;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 button {
@@ -79,6 +96,7 @@ img:hover {
 #book-form .input {
     display: flex;
     flex-direction: column;
+    font-size: 0.9rem;
 }
 
 #book-form .form-buttons {
@@ -87,7 +105,6 @@ img:hover {
     display: flex;
     gap: 10px;
 }
-
 
 #add-book:hover img {
     filter: var(--svg-color-filter-black);
@@ -101,12 +118,19 @@ img:hover {
     justify-content: center;
 }
 
-
 /* Header */
+#header {
+    background-color: var(--medium-color);
+    box-shadow: 0 3px 3px var(--dark-color-shade);
+}
+
 #header h1 {
     text-align: center;
     margin-top: 100px;
     margin-bottom: 50px;
+    color: var(--dark-color);
+    letter-spacing: .1rem;
+    font-weight: 750;
 }
 
 /* Books Container */
@@ -116,6 +140,7 @@ img:hover {
     justify-content: center;
     margin-left: 5vw;
     margin-right: 5vw;
+    margin-top: 50px;
 }
 
 #books {
@@ -136,6 +161,9 @@ img:hover {
     font-size: 1.2rem;
     font-weight: 710;
     word-wrap: break-word;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    margin: 15px 5px 10px 5px;
 }
 
 .small-text {
@@ -149,6 +177,7 @@ img:hover {
 }
 
 .book-pages {
+    margin-top: 10px;
     font-size: 0.8rem;
 }
 
@@ -156,7 +185,8 @@ img:hover {
     margin-top: auto;
     margin-bottom: 10px;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-around;
     width: 100%;
 }
 

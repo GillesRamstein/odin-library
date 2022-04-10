@@ -1,5 +1,3 @@
-console.log("Start");
-
 let myLibrary = [];
 let books = document.getElementById("books");
 
@@ -82,13 +80,13 @@ function addNewBookToDOM(book) {
 function formatPages(pages) {
     if (pages < 0) return "book is from another dimension";
     if (pages === 0) return "book is empty";
-    if (pages === 1) return "1 page";
-    return pages + " pages";
+    if (pages === 1) return "(1 page)";
+    return "(" + pages + " pages)";
 }
 
 function formatRead(read) {
-    if (read === "true") return "Already read";
-    return "Not read yet";
+    if (read === "true") return "(Already read)";
+    return "(Not read yet)";
 }
 
 function removeBookFromLibrary(e) {
@@ -129,9 +127,9 @@ function toggleReadBookStatus(e) {
 // Populate library with dummy books
 
 myLibrary = [
-    new Book("Book 1", "Author 1", 1, false),
-    new Book("Book 2", "Author 2", 2, true),
-    new Book("Book 3", "Author 1", 1, false),
-    new Book("Book 4", "Author 2", 2, true),
+    new Book("Dummy Book 1", "Jane Smith", 1, false),
+    new Book("Dummy Book 2", "Peter Muster", 2, true),
+    new Book("Bitcoin White-Paper", "Satoshi Nakamoto", 9, false),
+    new Book("Anarchist Cookbook", "William Powell", 164, true),
 ];
 myLibrary.forEach((book) => addNewBookToDOM(book));

@@ -15,7 +15,6 @@
         <div class="small-text">written by</div>
         <div class="book-author"></div>
         <div class="book-pages"></div>
-        <div class="book-read"></div>
         <div class="book-buttons">
             <button
                 data-read="false"
@@ -30,7 +29,13 @@
                     alt="toggle book read status"
                 />
             </button>
-            <button class="delete" type="button" value="Delete Book" title="Remove book from library">
+            <div class="book-read small-text"></div>
+            <button
+                class="delete"
+                type="button"
+                value="Delete Book"
+                title="Remove book from library"
+            >
                 <img src="images/delete.svg" alt="delete book from library" />
             </button>
         </div>
@@ -90,26 +95,21 @@
 
     <!-- Actual Page -->
     <body>
-        <div id="library-app">
-            <div id="header">
-                <h1>Library App</h1>
-            </div>
-            <div id="books-wrapper">
-                <div id="books">
-                    <div id="add-book" class="card">
-                        <label for="new-book-button" id="new-book-button-label">
-                            <button
-                                id="new-book-button"
-                                type="button"
-                                value="Add New Book"
-                                class="hidden"
-                            ></button>
-                            <img
-                                src="images/add-book.svg"
-                                alt="add book icon"
-                            />
-                        </label>
-                    </div>
+        <div id="header">
+            <h1>Library App</h1>
+        </div>
+        <div id="books-wrapper">
+            <div id="books">
+                <div id="add-book" class="card">
+                    <label for="new-book-button" id="new-book-button-label">
+                        <button
+                            id="new-book-button"
+                            type="button"
+                            value="Add New Book"
+                            class="hidden"
+                        ></button>
+                        <img src="images/add-book.svg" alt="add book icon" />
+                    </label>
                 </div>
             </div>
         </div>
